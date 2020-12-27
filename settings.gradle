@@ -1,0 +1,5 @@
+rootProject.name = 'migration-maven-to-gradle-multimodule'
+include(':constant')
+include(':libs')
+include(':starter')
+include(':application')

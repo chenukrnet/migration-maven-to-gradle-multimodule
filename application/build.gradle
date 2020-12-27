@@ -1,0 +1,12 @@
+plugins {
+    id "org.springframework.boot" version "2.4.1"
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.4.1'
+    implementation project(':starter')
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.4.1'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+}
+
+description = 'application'

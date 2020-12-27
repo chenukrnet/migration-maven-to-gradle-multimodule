@@ -1,0 +1,28 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'org.springframework.boot' version '2.4.1' apply false
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+    }
+}
+
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot:2.4.1'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor:2.4.1'
+    api project(':libs')
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
