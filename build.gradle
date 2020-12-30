@@ -1,0 +1,19 @@
+subprojects {
+    apply plugin: 'java'
+    repositories {
+        mavenCentral()
+    }
+
+    group = 'org.example'
+    version = '1.0-SNAPSHOT'
+
+    configurations {
+        testAnnotationProcessor.extendsFrom annotationProcessor
+        compileOnly.extendsFrom annotationProcessor
+        testCompileOnly.extendsFrom annotationProcessor
+    }
+    java {
+        sourceCompatibility = JavaVersion.VERSION_11
+    }
+
+}
